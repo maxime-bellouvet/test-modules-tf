@@ -9,8 +9,7 @@ provider "aws" {
 resource "aws_s3_bucket" "test-bucket-chg-new" {
   bucket = "super-bucket-test-cicd"
   acl    = "private"
-  region = "eu-west-1"
-
+  region = "eu-west-2"
   versioning {
     enabled = true
   }
