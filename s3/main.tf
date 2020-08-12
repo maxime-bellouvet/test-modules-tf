@@ -6,7 +6,7 @@ provider "aws" {
   region     = "eu-west-1"
 }
 
-resource "aws_s3_bucket" "test-bucket-chg" {
+resource "aws_s3_bucket" "test-bucket-chg-new" {
   bucket = "super-bucket-test-cicd"
   acl    = "private"
   region = "eu-west-1"
