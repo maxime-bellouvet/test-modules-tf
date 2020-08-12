@@ -1,10 +1,12 @@
 terraform {
   required_version = ">= 0.12, < 0.13"
 }
+
 provider "aws" {
   region     = "eu-west-1"
 }
-resource "aws_s3_bucket" "test" {
+
+resource "aws_s3_bucket" "test-bucket" {
   bucket = "super-bucket-test-cicd"
   acl    = "private"
   region = "eu-west-1"
