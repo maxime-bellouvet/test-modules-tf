@@ -21,6 +21,6 @@ resource "aws_s3_bucket" "cicd-test-terraform" {
   }
 
   tags = {
-    Name        = "var.BUCKET_NAME
+    Name        = var.BUCKET_NAME
   }
 }
