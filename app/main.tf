@@ -6,8 +6,12 @@ provider "aws" {
 terraform {
   backend "s3" {}
 }
-module "app" {
-  instance_type  = var.instance_type
-  instance_count = var.instance_count
-  # ... other app settings ...
+resource "aws_s3_bucket" "b" {
+  bucket = "my-tf-test-bucket"
+  acl    = "private"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 }
