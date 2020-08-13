@@ -1,15 +1,18 @@
 terraform {
   required_version = ">= 0.12, < 0.13"
+  required_providers {
+    aws = "~> 2.70.0"
+  }
 }
 
 provider "aws" {
-  region     = "eu-west-1"
+  region     = var.AWS_REGION
 }
 
 resource "aws_s3_bucket" "test-bucket-chg-new" {
-  bucket = "super-bucket-test-cicd"
+  bucket = var.BUCKET_NAME
   acl    = "private"
-  region = "eu-west-3"
+  region = var.AWS_REGION
   versioning {
     enabled = true
   }
@@ -23,6 +26,6 @@ resource "aws_s3_bucket" "test-bucket-chg-new" {
   }
 
   tags = {
-    Name        = "super-bucket-test-cicd"
+    Name        = var.BUCKET_NAME
   }
 }
