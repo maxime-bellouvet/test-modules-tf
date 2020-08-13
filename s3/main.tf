@@ -13,8 +13,9 @@ resource "aws_s3_bucket" "test-bucket-chg-new" {
   bucket = var.BUCKET_NAME
   acl    = "private"
   region = var.AWS_REGION
+  
   versioning {
-    enabled = true
+    enabled = false
   }
 
   server_side_encryption_configuration {
